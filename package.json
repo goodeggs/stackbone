@@ -18,6 +18,7 @@
   "author": "",
   "license": "BSD",
   "testling": {
+    "scripts": "test/vendor/*.js",
     "files": "test/test.js",
     "browsers": {
       "ie": [
