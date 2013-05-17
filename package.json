@@ -4,7 +4,7 @@
   "description": "Uncaught exception logging with stack traces for Backbone apps",
   "main": "stackbone.js",
   "scripts": {
-    "test": "./node_modules/.bin/browserify test/test.js | ./node_modules/.bin/testling"
+    "test": "./node_modules/.bin/browserify test/test.js | cat test/vendor/*.js - | ./node_modules/.bin/testling"
   },
   "repository": {
     "type": "git",
@@ -20,17 +20,36 @@
   "testling": {
     "files": "test/test.js",
     "browsers": {
-      "ie": [6, 7, 8, 9, 10],
-      "firefox": [19, "nightly"],
-      "opera": [12, "next"],
-      "safari": [5.1, 6],
-      "chrome": [25, "canary"]
+      "ie": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "firefox": [
+        19,
+        "nightly"
+      ],
+      "opera": [
+        12,
+        "next"
+      ],
+      "safari": [
+        5.1,
+        6
+      ],
+      "chrome": [
+        25,
+        "canary"
+      ]
     }
   },
   "devDependencies": {
     "testling": "~1.0.0",
     "browserify": "~2.13.3",
     "backbone": "~0.9.2",
-    "tape": "~1.0.2"
+    "tape": "~1.0.2",
+    "sinon": "~1.7.2"
   }
 }
