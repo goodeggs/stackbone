@@ -5,6 +5,16 @@ Uncaught exception logging with stack traces for Backbone apps.  Works by interc
 
 [![browser support](https://ci.testling.com/goodeggs/stackbone.png)](https://ci.testling.com/goodeggs/stackbone)
 
+    Stackbone = require('stackbone'); // optional
+
+    Stackbone.start({
+      Backbone: Backbone
+      jQuery: jQuery
+      onError: function (err) {
+        // ... log the error ...
+      }
+    });
+
 Hacking
 -------
 
