@@ -1,6 +1,6 @@
 {
   "name": "stackbone",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Uncaught exception logging with stack traces for Backbone apps",
   "main": "stackbone.js",
   "scripts": {
