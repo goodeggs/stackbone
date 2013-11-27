@@ -23,7 +23,7 @@
     function interceptErrors (fn) {
       return function() {
         try {
-          fn.apply(this, arguments);
+          return fn.apply(this, arguments);
         } catch (err) {
           if(err && !err.intercepted) {
             err.intercepted = true;
@@ -47,5 +47,8 @@
       callbacks.fireWith = interceptErrors(callbacks.fireWith);
       return callbacks;
     };
+
+    var originalJqueryDispatch = jQuery.event.dispatch;
+    jQuery.event.dispatch = interceptErrors(originalJqueryDispatch);
   };
 })(this);

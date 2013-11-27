@@ -16,13 +16,15 @@ test('Stackbone', function (t) {
       throw new Error('panic');
     });
 
+    t.plan(2);
+
     try {
       model.set({a: 2});
     } catch (err) {
-      // expected, swallow it
+      t.equal(err.message, 'panic', "error thrown");
     }
 
-    t.ok(onError.called);
+    t.ok(onError.called, "onError() called");
     t.end();
   });
 
