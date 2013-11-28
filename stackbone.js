@@ -19,6 +19,7 @@
     Backbone = options.Backbone || root.Backbone;
     jQuery = options.jQuery || root.jQuery;
     onError = options.onError || defaultOnError;
+    swallowErrors = options.swallowErrors || false;
 
     function interceptErrors (fn) {
       return function() {
@@ -29,7 +30,7 @@
             err.intercepted = true;
             onError(err);
           }
-          throw err;
+          if(!swallowErrors) { throw err; }
         }
       };
     }
